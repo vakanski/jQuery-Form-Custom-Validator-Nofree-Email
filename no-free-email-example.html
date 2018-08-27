@@ -1,0 +1,22 @@
+<form action="" method="post">
+    <p>
+        <input type="text" data-validation="email nofree_email">
+    </p>
+    ...
+</form>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<script>
+    // Add custom validation rule
+    $.formUtils.addValidator({
+        name: 'nofree_email',
+        validatorFunction: function(value, $el, config, language, $form) {
+            return /^([\w-.]+@(?!msn\.com)(?!aol\.com)(?!yahoo\.com)(?!hotmail\.com)(?!mailinator\.com)([\w-]+.)+[\w-]{2,4})?$/.test(value);
+        },
+        errorMessage: 'Please use a Work Email Address',
+        errorMessageKey: 'badWorkEmail'
+    });
+
+    // Setup form validation
+    $.validate();
+</script>
