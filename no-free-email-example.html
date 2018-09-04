@@ -11,7 +11,7 @@
     $.formUtils.addValidator({
         name: 'nofree_email',
         validatorFunction: function(value, $el, config, language, $form) {
-            return /^([\w-.]+@(?!msn\.com)(?!aol\.com)(?!yahoo\.com)(?!hotmail\.com)(?!mailinator\.com)([\w-]+.)+[\w-]{2,4})?$/.test(value);
+            return /^([\w-.]+@(?!msn\.com)(?!aol\.com)(?!yahoo\.com)(?!hotmail\.com)(?!mailinator\.com)(?!mailcatch\.com)([\w-]+.)+[\w-]{2,4})?$/.test(value);
         },
         errorMessage: 'Please use a Work Email Address',
         errorMessageKey: 'badWorkEmail'
